@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package module;
+
+option go_package = "grpcservice/pb";
+
+message Empty {}
+
+message ModuleRequest {
+  int32 id = 1;
+}
+
+// Module message representing a learning module
+message Module {
+  int32 id = 1;
+  string subject = 2;
+  string grade = 3;
+  string chapter = 4;
+  string content_json = 5;
+}
+
+message ModuleList {
+  repeated Module modules = 1;
+}
+
+// ModuleService provides RPCs for learning modules
+service ModuleService {
+  // ListModules returns all available learning modules
+  rpc ListModules(Empty) returns (ModuleList) {}
+  
+  // GetModule returns a specific module by ID
+  rpc GetModule(ModuleRequest) returns (Module) {}
+} 
