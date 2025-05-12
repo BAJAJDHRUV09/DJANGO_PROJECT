@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "1312a60a-7a05-494c-9506-4d79407f4d08",
+		"name": "REST_API_DJANGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37492302",
+		"_collection_link": "https://dhruvandfriends.postman.co/workspace/DJANGO_TEST~daae618e-d0ce-47d2-a48d-cf1f7c05319e/collection/37492302-1312a60a-7a05-494c-9506-4d79407f4d08?action=share&source=collection_link&creator=37492302"
+	},
+	"item": [
+		{
+			"name": "REGISTER A USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"okay123\",\r\n    \"password\": \"pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post module",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 0192c2c20c3ab0f7fbae33d2fe21ab726a2368f4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"CS771\",\r\n    \"grade\": \"3rd Year\",\r\n    \"chapter\": \"Intro to Machine Learning\",\r\n    \"content\": {\r\n        \"sections\": [\r\n            \"Introduction\",\r\n            \"Basic Concepts\"\r\n        ],\r\n        \"topics\": [\r\n            \"Logistic Regression\",\r\n            \"KNN\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/modules/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"modules",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete module by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e19a1a4199f8b156020f9d21b94b8b33f6620bd5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/modules/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"modules",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read modules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/modules/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"modules",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"okay123\",\r\n    \"password\": \"pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/api-token-auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"api-token-auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update module",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 0192c2c20c3ab0f7fbae33d2fe21ab726a2368f4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"Updated Mathematics\",\r\n    \"grade\": \"11th\",\r\n    \"chapter\": \"Advanced Algebra\",\r\n    \"content\": {\r\n        \"sections\": [\"Advanced Concepts\"],\r\n        \"exercises\": [\"Exercise 3\"]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/modules/5/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"modules",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get module by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/modules/5/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"modules",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
