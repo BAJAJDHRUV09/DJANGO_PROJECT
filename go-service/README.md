@@ -132,32 +132,9 @@ protoc --go_out=. --go_opt=paths=source_relative \
 Run the example client to test the service:
 ```bash
 
-# you can all modules by this
+# you can read all modules by this
 go run client/main.go
 
 # if you want specific module by ID (e.g., ID 1)
 go run client/main.go 1
 ```
-
-### Code Style
-
-- Follow Go standard formatting (`go fmt`)
-- Use meaningful variable names
-- Add comments for exported functions
-- Follow Go best practices
-
-## Architecture
-
-The service acts as a bridge between gRPC clients and the Django REST API:
-
-```
-[Go Client] <--gRPC--> [Go Service] <--HTTP--> [Django API]
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
